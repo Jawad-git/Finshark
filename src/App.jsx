@@ -1,6 +1,7 @@
 import "./App.css";
+import CardList from "./Components/CardList/CardList";
 function App() {
-  return <>hi</>;
+  return <CardList />;
 }
 
 export default App;
