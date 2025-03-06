@@ -5,6 +5,8 @@ import CardList from "./Components/CardList/CardList";
 import Search from "./Components/Search/Search";
 import { CompanySearch } from "./company";
 import { searchCompanies } from "./api";
+
+
 function App() {
   const [search, setSearch] = useState<string>("");
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
@@ -27,8 +29,8 @@ function App() {
   return (
     <div>
       <Search onClick={onClick} search={search} handleChange={handleChange} />
+      <CardList searchResults={searchResult} />
       {serverError && <h1>{serverError}</h1>}
-      <CardList />
     </div>
   );
 }
