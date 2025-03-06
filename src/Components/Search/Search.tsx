@@ -2,16 +2,17 @@ import React, {ChangeEvent, useState, SyntheticEvent} from 'react'
 import styles from "./Search.module.css";
 interface Props {
     search: string | undefined;
-    handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    onClick: (e: SyntheticEvent) => void;
+    handleSearchChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    onSearchSubmit: (e: SyntheticEvent) => void;
 } 
 
-const Search: React.FC<Props> = ({search, handleChange, onClick}: Props): JSX.Element => {
+const Search: React.FC<Props> = ({search, handleSearchChange, onSearchSubmit}: Props): JSX.Element => {
   return (
-      <div>
-          <input type={search} onChange={(e) => handleChange(e)} />
-          <button onClick={(e) => onClick(e)}>Search</button>
-    </div>
+      <>
+          <form onSubmit={onSearchSubmit}>
+              <input value={search} onChange={(e) => handleSearchChange(e)} />
+          </form>
+      </>
   )
 }
 

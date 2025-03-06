@@ -9,7 +9,9 @@ import "./index.css";
 
 const router = createBrowserRouter(routes);
 
-createRoot(document.getElementById("root")).render(
+const root = createRoot(document.getElementById("root") as HTMLElement);
+
+root.render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>
