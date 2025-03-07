@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Hero.module.css";
 import hero from "./hero.png";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 interface Props {}
 
 const Hero = (props: Props) => {
