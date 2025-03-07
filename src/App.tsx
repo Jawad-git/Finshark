@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { ChangeEvent, SyntheticEvent } from "react";
 import "./App.css";
+import "./index.css";
 import CardList from "./Components/CardList/CardList";
 import Search from "./Components/Search/Search";
 import { CompanySearch } from "./company";
 import { searchCompanies } from "./api";
 import ListPortfolio from "./Components/Portfolio/ListPortfolio/ListPortfolio";
+import Navbar from "./Components/Navbar/Navbar";
 
 
 function App() {
@@ -45,7 +47,8 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="App">
+      <Navbar />
       <Search onSearchSubmit={onSearchSubmit} search={search} handleSearchChange={handleSearchChange} />
       <ListPortfolio portfolioValues={portfolioValues} onPortfolioDelete={onPortfolioDelete}/>
       <CardList searchResults={searchResult} onPortfolioCreate={onPortfolioCreate} />
