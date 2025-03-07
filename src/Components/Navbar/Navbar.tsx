@@ -1,15 +1,17 @@
-import React from 'react';
-import styles from './Navbar.module.css';
+import React from "react";
+import styles from "./Navbar.module.css";
 import logo from "./logo.png";
 
-type Props = {}
+type Props = {};
 
 const Navbar = (props: Props) => {
   return (
     <nav className="relative container mx-auto p-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-20">
+          <Link to="/" >
           <img src={logo} alt="" />
+          </Link>
           <div className="hidden font-bold lg:flex">
             <a href="" className="text-black hover:text-darkBlue">
               Dashboard
@@ -28,6 +30,6 @@ const Navbar = (props: Props) => {
       </div>
     </nav>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

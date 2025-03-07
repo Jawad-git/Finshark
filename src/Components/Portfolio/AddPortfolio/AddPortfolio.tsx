@@ -1,11 +1,14 @@
-import React, { SyntheticEvent } from 'react'
-import styles from "./AddPortfolio.module.css"
+import React, { SyntheticEvent } from "react";
+import styles from "./AddPortfolio.module.css";
 interface Props {
   onPortfolioCreate: (e: SyntheticEvent) => void;
   symbol: string;
 }
 
-const AddPortfolio : React.FC<Props> = ({onPortfolioCreate, symbol}: Props) : JSX.Element => {
+const AddPortfolio: React.FC<Props> = ({
+  onPortfolioCreate,
+  symbol,
+}: Props): JSX.Element => {
   return (
     <div className="flex flex-col items-center justify-end flex-1 space-x-4 space-y-2 md:flex-row md:space-y-0">
       <form onSubmit={onPortfolioCreate}>
@@ -18,7 +21,7 @@ const AddPortfolio : React.FC<Props> = ({onPortfolioCreate, symbol}: Props) : JS
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default AddPortfolio
+export default AddPortfolio;

@@ -1,12 +1,16 @@
-import React, {ChangeEvent, useState, SyntheticEvent} from 'react'
+import React, { ChangeEvent, useState, SyntheticEvent } from "react";
 import styles from "./Search.module.css";
 interface Props {
-    search: string | undefined;
-    handleSearchChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    onSearchSubmit: (e: SyntheticEvent) => void;
-} 
+  search: string | undefined;
+  handleSearchChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onSearchSubmit: (e: SyntheticEvent) => void;
+}
 
-const Search: React.FC<Props> = ({search, handleSearchChange, onSearchSubmit}: Props): JSX.Element => {
+const Search: React.FC<Props> = ({
+  search,
+  handleSearchChange,
+  onSearchSubmit,
+}: Props): JSX.Element => {
   return (
     <section className="relative bg-gray-100">
       <div className="max-w-4xl mx-auto p-6 space-y-6">
@@ -24,7 +28,7 @@ const Search: React.FC<Props> = ({search, handleSearchChange, onSearchSubmit}: P
         </form>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Search;

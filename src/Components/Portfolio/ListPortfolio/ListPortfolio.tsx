@@ -1,12 +1,15 @@
-import React, { SyntheticEvent } from 'react'
-import CardPortfolio from '../CardPortfolio/CardPortfolio';
+import React, { SyntheticEvent } from "react";
+import CardPortfolio from "../CardPortfolio/CardPortfolio";
 
 interface Props {
-    portfolioValues: string[];
-    onPortfolioDelete: (e: SyntheticEvent) => void;
+  portfolioValues: string[];
+  onPortfolioDelete: (e: SyntheticEvent) => void;
 }
 
-const ListPortfolio: React.FC<Props> = ({portfolioValues, onPortfolioDelete}: Props) : JSX.Element => {
+const ListPortfolio: React.FC<Props> = ({
+  portfolioValues,
+  onPortfolioDelete,
+}: Props): JSX.Element => {
   return (
     <section id="portfolio">
       <h2 className="mb-3 mt-3 text-3xl font-semibold text-center md:text-4xl">
@@ -32,7 +35,7 @@ const ListPortfolio: React.FC<Props> = ({portfolioValues, onPortfolioDelete}: Pr
         </>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ListPortfolio
+export default ListPortfolio;

@@ -1,5 +1,5 @@
-const ErrorElement = () => {
+const ErrorPage = () => {
   return <>this parameter is not found! -- Error Page</>;
 };
 
-export default ErrorElement;
+export default ErrorPage;

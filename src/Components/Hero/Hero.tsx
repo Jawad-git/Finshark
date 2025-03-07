@@ -1,9 +1,8 @@
-import React from 'react'
-import styles from './Hero.module.css'
-import hero from './hero.png';
-interface Props {
-    
-}
+import React from "react";
+import styles from "./Hero.module.css";
+import hero from "./hero.png";
+import { Link } from "react-router";
+interface Props {}
 
 const Hero = (props: Props) => {
   return (
@@ -18,12 +17,12 @@ const Hero = (props: Props) => {
             news.
           </p>
           <div className="mx-auto lg:mx-0">
-            <a
-              href=""
+            <Link
+              to="/search"
               className="py-5 px-10 text-2xl font-bold text-white bg-lightGreen rounded lg:py-4 hover:opacity-70"
             >
               Get Started
-            </a>
+            </Link>
           </div>
         </div>
         <div className="mb-24 mx-auto md:w-180 md:px-10 lg:mb-0 lg:w-1/2">
@@ -32,6 +31,6 @@ const Hero = (props: Props) => {
       </div>
     </section>
   );
-}
+};
 
-export default Hero
+export default Hero;
