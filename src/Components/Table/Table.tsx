@@ -9,11 +9,11 @@ interface Props {}
 type Company = (typeof data)[0];
 const configs = [
   {
-    Label: "Year",
+    label: "Year",
     render: (company: Company) => company.acceptedDate,
   },
   {
-    Label: "Cost of Revenue",
+    label: "Cost of Revenue",
     render: (company: Company) => company.costOfRevenue,
   },
 ];
@@ -38,7 +38,7 @@ const Table = (props: Props) => {
         className="p-4 text-left text-xs font-medium text-fray-500 uppercase tracking-wider"
         key={config.label}
       >
-        {config.Label}
+        {config.label}
       </th>
     );
   });
