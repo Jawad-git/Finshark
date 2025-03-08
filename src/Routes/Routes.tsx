@@ -6,6 +6,7 @@ import ErrorPage from "../pages/errorElement/ErrorPage";
 import SearchPage from "../pages/SearchPage/SearchPage";
 import IncomeStatement from "../Components/IncomeStatement/IncomeStatement";
 import CompanyProfile from "../Components/CompanyProfile/CompanyProfile";
+import DesignPage from "../pages/DesignPage/DesignPage";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -14,6 +15,14 @@ export const router = createBrowserRouter([
       {
         path: "",
         element: <HomePage />,
+      },
+      {
+        path: "search",
+        element: <SearchPage />,
+      },
+      {
+        path: "design",
+        element: <DesignPage />,
       },
       {
         path: "company/:ticker",
@@ -28,10 +37,6 @@ export const router = createBrowserRouter([
             element: <IncomeStatement />,
           },
         ],
-      },
-      {
-        path: "search",
-        element: <SearchPage />,
       },
     ],
     errorElement: <ErrorPage />,
