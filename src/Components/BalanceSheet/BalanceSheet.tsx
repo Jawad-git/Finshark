@@ -4,6 +4,7 @@ import { getBalance } from "../../api";
 import RatioList from "../RatioList/RatioList";
 import { CompanyBalanceSheet, CompanyCashFlow } from "../../company";
 import Table from "../Table/Table";
+import Spinner from "../Spinner/Spinner";
 
 interface Props {}
 
@@ -77,7 +78,7 @@ const BalanceSheet = (props: Props) => {
       {balanceSheet ? (
         <RatioList config={configs} data={balanceSheet} />
       ) : (
-        <>Loading...</>
+        <Spinner isLoading={true} />
       )}
     </>
   );

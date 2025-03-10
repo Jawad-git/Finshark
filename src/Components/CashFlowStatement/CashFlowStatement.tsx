@@ -4,6 +4,7 @@ import { CompanyCashFlow } from "../../company";
 import Table from "../Table/Table";
 import { useOutletContext } from "react-router";
 import { getCashFlowStatement } from "../../api";
+import Spinner from "../Spinner/Spinner";
 interface Props {}
 
 const config = [
@@ -58,7 +59,7 @@ const CashFlowStatement: React.FC<Props> = (props: Props): JSX.Element => {
       {cashFlowData.length > 0 ? (
         <Table config={config} data={cashFlowData} />
       ) : (
-        <div className="text-center">No results</div>
+        <Spinner isLoading={true} />
       )}
     </>
   );
