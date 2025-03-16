@@ -38,24 +38,25 @@ export const UserProvider = ({ children }: Props) => {
   }, []);
 
   const registerUser = async (email: string, username: string, password: string) => {
-    await registerApi(email, username, password)
-      .then((res) => {
-        if (res) {
-          localStorage.setItem("token", res?.data.token);
-          const userObj = {
-            userName: res?.data.userName,
-            email: res?.data.email,
-          };
-          localStorage.setItem("user", JSON.stringify(userObj));
-          setToken(res?.data.token!);
-          setUser(userObj!);
-          toast.success("Login success");
-          navigate("/search");
-        }
-      })
-      .catch((error) => {
-        toast.warning("Server error occured");
-      });
+    try {
+      var res = await registerApi(email, username, password);
+      if (res) {
+        localStorage.setItem("token", res?.data.token);
+        const userObj = {
+          username: res?.data.username,
+          email: res?.data.email,
+        };
+        localStorage.setItem("user", JSON.stringify(userObj));
+        setToken(res?.data.token!);
+        setUser(userObj!);
+        toast.success("Login success");
+        navigate("/search");
+      } else {
+        toast.error("Invalid credentials");
+      }
+    } catch (error) {
+      toast.warning("Server error occured");
+    }
   };
 
   const loginUser = async (username: string, password: string) => {
@@ -64,7 +65,7 @@ export const UserProvider = ({ children }: Props) => {
       if (res) {
         localStorage.setItem("token", res.data.token);
         const userObj = {
-          userName: res.data.userName,
+          username: res.data.username,
           email: res.data.email,
         };
         localStorage.setItem("user", JSON.stringify(userObj));

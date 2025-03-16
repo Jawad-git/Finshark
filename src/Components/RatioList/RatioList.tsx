@@ -9,19 +9,13 @@ interface Props {
 const RatioList: React.FC<Props> = ({ data, config }: Props): JSX.Element => {
   const renderedRows = config.map((row: any) => {
     return (
-      <li className="py-3 sm:py-4">
+      <li className="py-3 sm:py-4" key={row.label}>
         <div className="flex items-center justify-between space-x-4">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-gray-900 truncate">
-              {row.label}
-            </p>
-            <p className="text-sm text-gray-500 truncate">
-              {row.subtitle && row.subtitle}
-            </p>
+            <p className="text-sm font-medium text-gray-900 truncate">{row.label}</p>
+            <p className="text-sm text-gray-500 truncate">{row.subtitle && row.subtitle}</p>
           </div>
-          <div className="inline-flex items-center text-base font-semibold text-gray-900">
-            {row.render(data)}
-          </div>
+          <div className="inline-flex items-center text-base font-semibold text-gray-900">{row.render(data)}</div>
         </div>
       </li>
     );
